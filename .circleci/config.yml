@@ -16,5 +16,5 @@ jobs:
     steps:
       - add_ssh_keys:
           fingerprints:
-            - "50:5b:2a:50:41:56:a8:7f:16:1e:4e:12:48:f1:93:2c"
+            - "91:bf:70:72:df:39:68:e3:14:e0:5b:91:74:30:78:70"
       - run: ssh root@173.255.236.56 touch /tmp/touchy
