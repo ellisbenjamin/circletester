@@ -17,6 +17,6 @@ jobs:
       - add_ssh_keys:
           fingerprints:
             - "50:5b:2a:50:41:56:a8:7f:16:1e:4e:12:48:f1:93:2c"
-      - run:
-        name: tester
-        command: echo
+      # - run:
+      #   name: tester
+      #   command: echo
