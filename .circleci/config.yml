@@ -7,7 +7,7 @@ workflows:
   Welcome:
     jobs:
       - deploy
-      - welcome/run
+      # - welcome/run
 
 jobs:
   deploy:
