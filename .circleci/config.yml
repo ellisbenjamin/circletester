@@ -1,20 +1,15 @@
 version: 2.1
-
 orbs:
-  welcome: circleci/welcome-orb@0.3.1
-
-workflows:
-  Welcome:
-    jobs:
-      - deploy
-      # - welcome/run
+  ruby: circleci/ruby@0.1.2 
 
 jobs:
-  deploy:
-    machine:
-      enabled: true
+  build:
+    docker:
+      - image: circleci/ruby:2.6.3-stretch-node
+    executor: ruby/default
     steps:
-      - add_ssh_keys:
-          fingerprints:
-            - "91:bf:70:72:df:39:68:e3:14:e0:5b:91:74:30:78:70"
-      - run: ssh root@173.255.236.56 touch /tmp/touchy
+      - checkout
+      - run:
+          name: Which bundler?
+          command: bundle -v
+      - ruby/bundle-install
